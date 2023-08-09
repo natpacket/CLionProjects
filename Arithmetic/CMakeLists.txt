@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.26)
+project(Arithmetic)
+
+set(CMAKE_CXX_STANDARD 11)
+
+add_executable(arithmetic main.cpp
+        base64.cpp
+        base64.h)

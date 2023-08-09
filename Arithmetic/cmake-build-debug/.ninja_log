@@ -1,0 +1,5 @@
+# ninja log v5
+735	830	1691587619870372416	arithmetic	c930005ebce39a15
+0	732	1691587619770399952	CMakeFiles/arithmetic.dir/main.cpp.o	6b368c81aea163a3
+0	130	1691587619175338051	CMakeFiles/arithmetic.dir/base64.cpp.o	24c57112eeaa654d
+1	77	1691587656321057483	build.ninja	cbfab31fe3cca7b0
