@@ -1,0 +1,3 @@
+/Users/natpacket/CLionProjects/Arithmetic/cmake-build-arithmetic/CMakeFiles/arithmetic.dir
+/Users/natpacket/CLionProjects/Arithmetic/cmake-build-arithmetic/CMakeFiles/edit_cache.dir
+/Users/natpacket/CLionProjects/Arithmetic/cmake-build-arithmetic/CMakeFiles/rebuild_cache.dir

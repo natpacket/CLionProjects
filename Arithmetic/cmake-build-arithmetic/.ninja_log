@@ -1,0 +1,4 @@
+# ninja log v5
+0	96	1691588165821888601	CMakeFiles/arithmetic.dir/base64.cpp.o	fbd4aae6506e0b60
+0	653	1691588166378993638	CMakeFiles/arithmetic.dir/main.cpp.o	de2f274d539763b7
+655	743	1691588166471443425	arithmetic	c930005ebce39a15
