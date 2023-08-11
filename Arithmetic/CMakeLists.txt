@@ -5,4 +5,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 add_executable(arithmetic main.cpp
         base64.cpp
-        base64.h)
+        base64.h
+        md5.cpp
+        md5.h
+)
