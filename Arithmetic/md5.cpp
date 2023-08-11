@@ -205,9 +205,16 @@ void MD5_Transform(uint32 state[4], const uint8 block[MD5_BLOCK_SIZE]) {
 void MD5_Update(MD5_CTX *context, const uint8 *input, uint32 inputlen) {
     uint32 i, index, partlen;
     // 计算缓冲区中剩余空间
+    // context->count[0] >> 3 (bit位数 变 byte字节数)
+    // 0x3f == 63
+    // count & 63 == count % 63 (求余)
+    // 当前记录的位数进行求余 表示缓冲区待处理的数据长度
     index = (context->count[0] >> 3) & 0x3F;
     // 更新位计数器
     // 如果位计数器溢出，则更新高位计数器
+    // 比如 下面的情况
+    //    unsigned  int a= 0xffffffff;
+    //    printf("%x \n",a+3);  打印为: 2
     if ((context->count[0] += (inputlen << 3)) < (inputlen << 3))
         context->count[1]++;
     context->count[1] += (inputlen >> 29);
@@ -268,7 +275,8 @@ void testmd5() {
         printf("%02x", output[i]);
     }
     printf("\n");
-//    int a=1;
+    unsigned  int a= 0xffffffff;
+    printf("%x \n",a+3);
 //    int b=3;
 //    if( (a += 3) < b)
 //        printf(" < \n");
