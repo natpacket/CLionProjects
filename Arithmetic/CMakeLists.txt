@@ -8,4 +8,6 @@ add_executable(arithmetic main.cpp
         base64.h
         md5.cpp
         md5.h
+        sha1.cpp
+        sha1.h
 )
