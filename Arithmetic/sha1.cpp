@@ -139,7 +139,8 @@ void testsha1() {
     uint32_t state[5];
 
     Sha1_Init(state);
-    Sha1_Update(state, message, sizeof(message)-1); // 不算结尾的'\0'
+//    Sha1_Update(state, message, sizeof(message)-1); // 不算结尾的'\0'
+    Sha1_Update(state, message, strlen(reinterpret_cast<const char *>(message))); // 不算结尾的'\0'
     Sha1_Final(state, digest);
 
     printf("123456 SHA-1 Digest: ");
