@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/natpacket/CLionProjects/Arithmetic -B/Users/natpacket/CLionProjects/Arithmetic/cmake-build-debug
+  command = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/natpacket/Desktop/CLionProjects/Arithmetic -B/Users/natpacket/Desktop/CLionProjects/Arithmetic/cmake-build-arithmetic
   description = Re-running CMake...
   generator = 1
 

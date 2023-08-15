@@ -270,13 +270,13 @@ void testmd5() {
     uint8 input[] = "123456";
     uint8 output[MD5_DIGEST_SIZE];
     MD5(input, strlen((char *)input), output);
-    printf("MD5: ");
+    printf("123456 MD5: ");
     for (uint32 i = 0; i < MD5_DIGEST_SIZE; i++) {
         printf("%02x", output[i]);
     }
     printf("\n");
-    unsigned  int a= 0xffffffff;
-    printf("%x \n",a+3);
+//    unsigned  int a= 0xffffffff;
+//    printf("%x \n",a+3);
 //    int b=3;
 //    if( (a += 3) < b)
 //        printf(" < \n");

@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/natpacket/CLionProjects/Arithmetic/cmake-build-debug",
-		"source" : "/Users/natpacket/CLionProjects/Arithmetic"
+		"build" : "/Users/natpacket/Desktop/CLionProjects/Arithmetic/cmake-build-arithmetic",
+		"source" : "/Users/natpacket/Desktop/CLionProjects/Arithmetic"
 	},
 	"version" : 
 	{

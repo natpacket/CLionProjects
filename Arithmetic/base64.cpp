@@ -63,12 +63,12 @@ void testBase64() {
 
     // 加密
     char* encryptedData = base64Encode(reinterpret_cast<const unsigned char *>(input), plainDataSize);
-    printf("Encrypted: %s\n", encryptedData);
+    printf("Base64 Encrypted: %s\n", encryptedData);
 
     // 解密
     int decryptedDataSize;
     unsigned char* decryptedData = base64Decode(encryptedData, &decryptedDataSize);
-    printf("Decrypted: ");
+    printf("Base64 Decrypted: ");
     for (int i = 0; i < decryptedDataSize; i++) {
         printf("%c", decryptedData[i]);
     }
