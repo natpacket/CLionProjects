@@ -14,18 +14,6 @@
 
 // 算法来源 https://www.cs.cmu.edu/afs/club/usr/jhutz/project/sss/util/md5c.c
 
-#define MD5_BLOCK_SIZE 64
-#define MD5_DIGEST_SIZE 16
-
-typedef unsigned char uint8; // 8位无符号整数类型
-typedef unsigned int uint32; // 32位无符号整数类型
-
-/* MD5算法上下文结构 */
-typedef struct {
-    uint32 state[4];   // 维护MD5算法的运算状态
-    uint32 count[2];   // 记录消息的位数
-    uint8 buffer[MD5_BLOCK_SIZE];  // 缓存消息块
-} MD5_CTX;
 
 /* 常量表 */
 static const uint8 PADDING[MD5_BLOCK_SIZE] = {
@@ -270,7 +258,7 @@ void testmd5() {
     uint8 input[] = "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq";
     uint8 output[MD5_DIGEST_SIZE];
     MD5(input, strlen((char *)input), output);
-    printf("123456 MD5: ");
+    printf("%s MD5: ",input);
     for (uint32 i = 0; i < MD5_DIGEST_SIZE; i++) {
         printf("%02x", output[i]);
     }

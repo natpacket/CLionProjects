@@ -10,4 +10,6 @@ add_executable(arithmetic main.cpp
         md5.h
         sha1.cpp
         sha1.h
+        hmac_md5.cpp
+        hmac_md5.h
 )
