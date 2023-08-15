@@ -7,146 +7,163 @@
 #include <stdint.h>
 #include <string.h>
 
-#define SHA1_BLOCK_SIZE 20  // SHA-1摘要的长度为20字节
+#define SHA1_BLOCK_SIZE 20
+#define SHA1_DIGEST_SIZE 20
+#define SHA1_BLOCK_SIZE 64
 
-// 初始SHA-1上下文
-void Sha1_Init(uint32_t state[5]) {
-    state[0] = 0x67452301;
-    state[1] = 0xEFCDAB89;
-    state[2] = 0x98BADCFE;
-    state[3] = 0x10325476;
-    state[4] = 0xC3D2E1F0;
+typedef unsigned char uint8; // 8位无符号整数类型
+
+// 定义SHA-1上下文结构体
+typedef struct {
+    uint32_t state[5];           // 存储中间结果
+    uint32_t count[2];           // 存储输入比特数
+    unsigned char buffer[SHA1_BLOCK_SIZE];    // 输入缓冲区
+} SHA1_CTX;
+/* 常量表 */
+static const uint8 PADDING[SHA1_BLOCK_SIZE] = {
+        0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+};
+// 初始化SHA-1上下文
+void Sha1_Init(SHA1_CTX *ctx) {
+    ctx->state[0] = 0x67452301;
+    ctx->state[1] = 0xEFCDAB89;
+    ctx->state[2] = 0x98BADCFE;
+    ctx->state[3] = 0x10325476;
+    ctx->state[4] = 0xC3D2E1F0;
+
+    ctx->count[0] = ctx->count[1] = 0;
 }
 
-// SHA-1循环函数
-uint32_t Sha1_RotateLeft(uint32_t value, uint32_t shift) {
-    return (value << shift) | (value >> (32 - shift));
-}
-
-// SHA-1压缩函数
-void Sha1_Compress(uint32_t state[5], const uint8_t block[64]) {
-    uint32_t a, b, c, d, e, f, k, temp;
+// 执行SHA-1转换
+void Sha1_Transform(SHA1_CTX *ctx, const unsigned char *data) {
+    uint32_t a, b, c, d, e, temp;
     uint32_t w[80];
-    int t;
-
     // 将block划分为16个32位字
-    for (t = 0; t < 16; t++) {
-        w[t] = block[t * 4 + 0] << 24 |
-               block[t * 4 + 1] << 16 |
-               block[t * 4 + 2] << 8 |
-               block[t * 4 + 3];
+    for (int i = 0; i < 16; i++) {
+        w[i] = data[i * 4 + 0] << 24 |
+                data[i * 4 + 1] << 16 |
+                data[i * 4 + 2] << 8 |
+                data[i * 4 + 3];
+    }
+    // 扩展消息块
+    for (int i = 16; i < 80; i++) {
+        w[i] = (w[i-3] ^ w[i-8] ^ w[i-14] ^ w[i-16]);
+        w[i] = (w[i] << 1) | (w[i] >> 31);
     }
 
-    // 将block扩展为80个32位字
-    for (t = 16; t < 80; t++) {
-        w[t] = Sha1_RotateLeft(w[t-3] ^ w[t-8] ^ w[t-14] ^ w[t-16], 1);
-    }
+    // 初始化哈希值
+    a = ctx->state[0];
+    b = ctx->state[1];
+    c = ctx->state[2];
+    d = ctx->state[3];
+    e = ctx->state[4];
 
-    // 初始化中间变量
-    a = state[0];
-    b = state[1];
-    c = state[2];
-    d = state[3];
-    e = state[4];
-
-    // 进行80轮迭代
-    for (t = 0; t < 80; t++) {
-        if (t >= 0 && t <= 19) {
-            f = (b & c) | ((~b) & d);
-            k = 0x5A827999;
-        } else if (t >= 20 && t <= 39) {
-            f = b ^ c ^ d;
-            k = 0x6ED9EBA1;
-        } else if (t >= 40 && t <= 59) {
-            f = (b & c) | (b & d) | (c & d);
-            k = 0x8F1BBCDC;
+    // 主循环
+    for (int i = 0; i < 80; i++) {
+        if (i < 20) {
+            temp = ((b & c) | ((~b) & d)) + 0x5A827999;
+        } else if (i < 40) {
+            temp = (b ^ c ^ d) + 0x6ED9EBA1;
+        } else if (i < 60) {
+            temp = ((b & c) | (b & d) | (c & d)) + 0x8F1BBCDC;
         } else {
-            f = b ^ c ^ d;
-            k = 0xCA62C1D6;
+            temp = (b ^ c ^ d) + 0xCA62C1D6;
         }
 
-        temp = Sha1_RotateLeft(a, 5) + f + e + k + w[t];
+        temp += ((a << 5) | (a >> 27)) + e + w[i];
         e = d;
         d = c;
-        c = Sha1_RotateLeft(b, 30);
+        c = (b << 30) | (b >> 2);
         b = a;
         a = temp;
     }
 
-    // 更新SHA-1上下文
-    state[0] += a;
-    state[1] += b;
-    state[2] += c;
-    state[3] += d;
-    state[4] += e;
+    // 计算下一个消息块
+    ctx->state[0] += a;
+    ctx->state[1] += b;
+    ctx->state[2] += c;
+    ctx->state[3] += d;
+    ctx->state[4] += e;
 }
 
 // 更新SHA-1上下文
-void Sha1_Update(uint32_t state[5], const uint8_t* data, uint32_t length) {
-    uint32_t i, j;
+void Sha1_Update(SHA1_CTX *ctx, const unsigned char *data, uint32_t len) {
+    uint32_t i, index, partlen;
 
-    // 对数据块进行处理
-    for (i = 0; i < length / 64; i++) {
-        uint8_t block[64];
-        for (j = 0; j < 64; j++) {
-            block[j] = data[i * 64 + j];
-        }
-        Sha1_Compress(state, block);
+    index = (ctx->count[0] >> 3) & 0x3F;
+    ctx->count[0] += len << 3;
+
+    if (ctx->count[0] < (len << 3)) {
+        ctx->count[1]++;
     }
 
-    // 处理最后一块数据
-    uint8_t block[64] = {0};
-    for (j = 0; j < length % 64; j++) {
-        block[j] = data[i * 64 + j];
-    }
-    block[length % 64] = 0x80;
+    ctx->count[1] += (len >> 29);
+    // 计算处理后的数据长度
+    partlen = SHA1_BLOCK_SIZE - index;
+    if (len >= partlen) {
+        memcpy(&(ctx->buffer[index]), data, partlen);
+        Sha1_Transform(ctx, ctx->buffer);
 
-    // 如果数据长度不足448位，则需要填充0
-    if (length % 64 < 56) {
-        uint64_t bit_length = length * 8;
-        for (j = 0; j < 8; j++) {
-            block[56 + j] = (bit_length >> (56 - j * 8)) & 0xFF;
+        for (i = partlen; i+SHA1_BLOCK_SIZE <= len; i += SHA1_BLOCK_SIZE) {
+            Sha1_Transform(ctx, &(data[i]));
         }
-        Sha1_Compress(state, block);
+
+        index = 0;
+    } else {
+        i = 0;
     }
-        // 否则，需要增加一块处理
-    else {
-        Sha1_Compress(state, block);
-        memset(block, 0, sizeof(block));
-        uint64_t bit_length = length * 8;
-        for (j = 0; j < 8; j++) {
-            block[j] = (bit_length >> (56 - j * 8)) & 0xFF;
-        }
-        Sha1_Compress(state, block);
-    }
+
+    memcpy(&(ctx->buffer[index]), &(data[i]), len - i);
 }
 
-// 完成SHA-1算法并输出摘要结果
-void Sha1_Final(uint32_t state[5], uint8_t digest[SHA1_BLOCK_SIZE]) {
-    int i;
-    for (i = 0; i < SHA1_BLOCK_SIZE/4; i++) {
-        digest[i*4 + 0] = (state[i] >> 24) & 0xFF;
-        digest[i*4 + 1] = (state[i] >> 16) & 0xFF;
-        digest[i*4 + 2] = (state[i] >> 8) & 0xFF;
-        digest[i*4 + 3] = state[i] & 0xFF;
-    }
-}
+// 结束SHA-1计算，返回摘要结果
+void Sha1_Final(unsigned char digest[SHA1_DIGEST_SIZE], SHA1_CTX *ctx) {
+    uint32_t i,index, padlen;
+    uint8_t  bits[8];
 
+//    memcpy(bits, ctx->count, 8);
+    // 数据长度填充方式和md5有区别，为大端方式填充
+    for (i = 0; i < 8; i++)
+    {
+        bits[i] = (unsigned char)((ctx->count[(i >= 4 ? 0 : 1)]
+                >> ((3 - (i & 3)) * 8)) & 255); /*   Endian   independent   */
+    }
+    index = (ctx->count[0] >> 3) & 0x3F;
+    //计算需要填充的长度
+    padlen = (index < 56) ? (56 - index) : (120 - index);
+    // 数据填充
+    Sha1_Update(ctx, PADDING, padlen);
+    // 填充长度
+    Sha1_Update(ctx, bits, 8);
+    for (i = 0; i < SHA1_DIGEST_SIZE; i++) {
+        digest[i] = (unsigned char)((ctx->state[i>>2] >> ((3-(i & 3)) * 8)) & 0xFF);
+    }
+
+    // 清空敏感信息
+    memset(ctx, 0, sizeof(*ctx));
+}
 void testsha1() {
-    // 测试示例
-    uint8_t message[] = "123456";
-    uint8_t digest[SHA1_BLOCK_SIZE];
-    uint32_t state[5];
+    unsigned char digest[SHA1_DIGEST_SIZE];
+    SHA1_CTX ctx;
 
-    Sha1_Init(state);
-//    Sha1_Update(state, message, sizeof(message)-1); // 不算结尾的'\0'
-    Sha1_Update(state, message, strlen(reinterpret_cast<const char *>(message))); // 不算结尾的'\0'
-    Sha1_Final(state, digest);
+    // 测试用例1
+    const char *str1 = "123456";
+    Sha1_Init(&ctx);
+//    Sha1_Update1(&ctx, (const unsigned char *)str1, strlen(str1));
+//    Sha1_Final1(&ctx ,digest);
+    Sha1_Update(&ctx, (const unsigned char *)str1, strlen(str1));
+    Sha1_Final(digest,&ctx);
+    printf("SHA-1 hash for '%s': ", str1);
 
-    printf("123456 SHA-1 Digest: ");
-    for (int i = 0; i < SHA1_BLOCK_SIZE; i++) {
+    for (int i = 0; i < SHA1_DIGEST_SIZE; i++) {
         printf("%02x", digest[i]);
     }
     printf("\n");
-
 }

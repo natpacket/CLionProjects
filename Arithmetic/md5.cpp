@@ -24,7 +24,7 @@ typedef unsigned int uint32; // 32位无符号整数类型
 typedef struct {
     uint32 state[4];   // 维护MD5算法的运算状态
     uint32 count[2];   // 记录消息的位数
-    uint8 buffer[64];  // 缓存消息块
+    uint8 buffer[MD5_BLOCK_SIZE];  // 缓存消息块
 } MD5_CTX;
 
 /* 常量表 */
@@ -125,7 +125,7 @@ void MD5_Transform(uint32 state[4], const uint8 block[MD5_BLOCK_SIZE]) {
     uint32 c = state[2];
     uint32 d = state[3];
     uint32 x[16];
-//    Decode(x, block, 64);
+//    Decode(x, block, MD5_BLOCK_SIZE);
     memcpy(x, block, MD5_BLOCK_SIZE);
     FF(a, b, c, d, x[0], 7, T[0]);
     FF(d, a, b, c, x[1], 12, T[1]);
@@ -226,7 +226,7 @@ void MD5_Update(MD5_CTX *context, const uint8 *input, uint32 inputlen) {
         memcpy(&context->buffer[index], input, partlen);
         MD5_Transform(context->state, context->buffer);
         // 处理剩余的数据块
-        for (i = partlen; i + 64 <= inputlen; i += MD5_BLOCK_SIZE)
+        for (i = partlen; i + MD5_BLOCK_SIZE <= inputlen; i += MD5_BLOCK_SIZE)
             MD5_Transform(context->state, &input[i]);
         index = 0;
     } else {
@@ -267,7 +267,7 @@ void MD5(const uint8 *input, uint32 inputlen, uint8 output[MD5_DIGEST_SIZE]) {
 
 /* 测试代码 */
 void testmd5() {
-    uint8 input[] = "123456";
+    uint8 input[] = "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq";
     uint8 output[MD5_DIGEST_SIZE];
     MD5(input, strlen((char *)input), output);
     printf("123456 MD5: ");

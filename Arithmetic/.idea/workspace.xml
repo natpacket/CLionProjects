@@ -20,7 +20,21 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9568a7d0-f34f-4443-baa9-6fa16b19c147" name="Changes" comment="" />
+    <list default="true" id="9568a7d0-f34f-4443-baa9-6fa16b19c147" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/sha1.cpp.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/.cmake/api/v1/reply/cmakeFiles-v1-339b0550273b2165ba8c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/.cmake/api/v1/reply/index-2023-08-15T01-13-38-0589.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-arithmetic/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-arithmetic/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeFiles/arithmetic.dir/md5.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeFiles/arithmetic.dir/md5.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeFiles/arithmetic.dir/sha1.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeFiles/arithmetic.dir/sha1.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeFiles/clion-arithmetic-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeFiles/clion-arithmetic-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/arithmetic" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-arithmetic/arithmetic" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-arithmetic/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/md5.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/md5.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sha1.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/sha1.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,6 +79,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
@@ -103,14 +122,29 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/sha1.cpp</url>
+          <url>file://$PROJECT_DIR$/sha1.cpp.txt</url>
           <line>4</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/sha1.cpp</url>
+          <url>file://$PROJECT_DIR$/sha1.cpp.txt</url>
           <line>5</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/sha1.cpp.txt</url>
+          <line>113</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/sha1.cpp.txt</url>
+          <line>101</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/sha1.cpp</url>
+          <line>55</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
