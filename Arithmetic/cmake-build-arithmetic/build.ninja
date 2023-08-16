@@ -79,6 +79,12 @@ build CMakeFiles/arithmetic.dir/hmac_md5.cpp.o: CXX_COMPILER__arithmetic_unscann
   OBJECT_DIR = CMakeFiles/arithmetic.dir
   OBJECT_FILE_DIR = CMakeFiles/arithmetic.dir
 
+build CMakeFiles/arithmetic.dir/crc32.cpp.o: CXX_COMPILER__arithmetic_unscanned_Debug /Users/natpacket/Desktop/CLionProjects/Arithmetic/crc32.cpp || cmake_object_order_depends_target_arithmetic
+  DEP_FILE = CMakeFiles/arithmetic.dir/crc32.cpp.o.d
+  FLAGS = -g -std=gnu++11 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/arithmetic.dir
+  OBJECT_FILE_DIR = CMakeFiles/arithmetic.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target arithmetic
@@ -87,7 +93,7 @@ build CMakeFiles/arithmetic.dir/hmac_md5.cpp.o: CXX_COMPILER__arithmetic_unscann
 #############################################
 # Link the executable arithmetic
 
-build arithmetic: CXX_EXECUTABLE_LINKER__arithmetic_Debug CMakeFiles/arithmetic.dir/main.cpp.o CMakeFiles/arithmetic.dir/base64.cpp.o CMakeFiles/arithmetic.dir/md5.cpp.o CMakeFiles/arithmetic.dir/sha1.cpp.o CMakeFiles/arithmetic.dir/hmac_md5.cpp.o
+build arithmetic: CXX_EXECUTABLE_LINKER__arithmetic_Debug CMakeFiles/arithmetic.dir/main.cpp.o CMakeFiles/arithmetic.dir/base64.cpp.o CMakeFiles/arithmetic.dir/md5.cpp.o CMakeFiles/arithmetic.dir/sha1.cpp.o CMakeFiles/arithmetic.dir/hmac_md5.cpp.o CMakeFiles/arithmetic.dir/crc32.cpp.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/arithmetic.dir
   POST_BUILD = :
