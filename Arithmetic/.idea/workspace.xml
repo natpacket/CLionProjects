@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="Arithmetic" targetName="arithmetic" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="arithmetic" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9568a7d0-f34f-4443-baa9-6fa16b19c147" name="Changes" comment="">
+<<<<<<< Updated upstream
+      <change afterPath="$PROJECT_DIR$/crc32.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crc32.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/.cmake/api/v1/reply/codemodel-v2-3d2fe1074a2c732bc532.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/.cmake/api/v1/reply/index-2023-08-15T09-23-45-0953.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/.cmake/api/v1/reply/target-arithmetic-Debug-a9803abaffab0b1e5e26.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-arithmetic/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-arithmetic/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeFiles/arithmetic.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeFiles/arithmetic.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/arithmetic" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-arithmetic/arithmetic" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-arithmetic/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/.cmake/api/v1/reply/cache-v2-13aa4722571432f3c1a8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/.cmake/api/v1/reply/cmakeFiles-v1-57cb0a953fca7b5c0892.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/.cmake/api/v1/reply/codemodel-v2-3d2fe1074a2c732bc532.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/.cmake/api/v1/reply/index-2023-08-15T09-23-45-0953.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-arithmetic/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-arithmetic/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeFiles/arithmetic.dir/base64.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeFiles/arithmetic.dir/hmac_md5.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeFiles/arithmetic.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeFiles/arithmetic.dir/md5.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeFiles/arithmetic.dir/sha1.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeFiles/clion-arithmetic-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-arithmetic/CMakeFiles/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-arithmetic/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-arithmetic/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-arithmetic/cmake_install.cmake" afterDir="false" />
+>>>>>>> Stashed changes
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:arithmetic" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2023" />
+    <option name="minorVersion" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2TkXRoE1bxZxSCJABOC4dA3ctD2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/natpacket/Desktop/CLionProjects/Arithmetic&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.customizations&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="arithmetic" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Arithmetic" TARGET_NAME="arithmetic" CONFIG_NAME="arithmetic" RUN_TARGET_PROJECT_NAME="Arithmetic" RUN_TARGET_NAME="arithmetic">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9568a7d0-f34f-4443-baa9-6fa16b19c147" name="Changes" comment="" />
+      <created>1691588046641</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1691588046641</updated>
+      <workItem from="1691588047667" duration="133000" />
+      <workItem from="1691733194886" duration="15091000" />
+      <workItem from="1692104416632" duration="610000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticEditVcpkgJson value="false" />
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticFoundErrors value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/sha1.cpp.txt</url>
+          <line>4</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/sha1.cpp.txt</url>
+          <line>5</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/sha1.cpp.txt</url>
+          <line>113</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/sha1.cpp.txt</url>
+          <line>101</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+<<<<<<< Updated upstream
+          <url>file://$PROJECT_DIR$/crc32.cpp</url>
+          <line>41</line>
+          <option name="timeStamp" value="33" />
+=======
+          <url>file://$PROJECT_DIR$/sha1.cpp</url>
+          <line>41</line>
+          <option name="timeStamp" value="29" />
+>>>>>>> Stashed changes
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
