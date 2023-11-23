@@ -733,7 +733,9 @@ CMakeFiles/arithmetic.dir/aes.cpp.o: /Users/natpacket/Desktop/CLionProjects/Arit
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_fsblkcnt_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/_types/_nl_item.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__bsd_locale_defaults.h
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
+  /Users/natpacket/Desktop/CLionProjects/Arithmetic/hexdump.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/iomanip
 
 CMakeFiles/arithmetic.dir/base64.cpp.o: /Users/natpacket/Desktop/CLionProjects/Arithmetic/base64.cpp \
   /Users/natpacket/Desktop/CLionProjects/Arithmetic/base64.h \
@@ -2518,6 +2520,8 @@ CMakeFiles/arithmetic.dir/sha1.cpp.o: /Users/natpacket/Desktop/CLionProjects/Ari
 
 /Users/natpacket/Desktop/CLionProjects/Arithmetic/base64.cpp:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/iomanip:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__bsd_locale_defaults.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/sys/_types/_fsblkcnt_t.h:
@@ -3005,6 +3009,8 @@ CMakeFiles/arithmetic.dir/sha1.cpp.o: /Users/natpacket/Desktop/CLionProjects/Ari
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__compare/compare_three_way.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__utility/priority_tag.h:
+
+/Users/natpacket/Desktop/CLionProjects/Arithmetic/hexdump.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1/__utility/as_const.h:
 

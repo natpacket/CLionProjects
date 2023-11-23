@@ -6,6 +6,7 @@
 #include "stdio.h"
 #include "string.h"
 #include "padding.h"
+#include "hexdump.hpp"
 
 AES::AES(unsigned char *key) {
     unsigned char sBox[] =
@@ -328,12 +329,16 @@ void testAes() {
 
     aes.Cipher(input.data(), input.size());
     aes.InvCipher(input_decrypt);
-    printf("加密后的值:");
+    printf("加密后的值:\n");
+    std::cout << Hexdump(input.data(), input.size()) << std::endl;
+//    std::cout << CustomHexdump<8, true>(input_decrypt, sizeof(input_decrypt)) << std::endl;
+//    std::cout << CustomHexdump<32, false>(input_decrypt, sizeof(input_decrypt)) << std::endl;
     for (int i = 0; i < input.size(); i++) {
         printf("%02x", input[i]);
     }
     printf("\n");
-    printf("解密后的值:");
+    printf("解密后的值:\n");
+    std::cout << Hexdump(input_decrypt, sizeof(input_decrypt)) << std::endl;
     for (int i = 0; i < 16; i++) {
         printf("%02x", input_decrypt[i]);
     }
