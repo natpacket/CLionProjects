@@ -14,4 +14,8 @@ add_executable(arithmetic main.cpp
         hmac_md5.h
         crc32.cpp
         crc32.h
+        aes.cpp
+        aes.h
+        padding.cpp
+        padding.h
 )

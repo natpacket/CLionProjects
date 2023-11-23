@@ -129,6 +129,30 @@ arithmetic/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/arithmetic.dir/build.make CMakeFiles/arithmetic.dir/build
 .PHONY : arithmetic/fast
 
+aes.o: aes.cpp.o
+.PHONY : aes.o
+
+# target to build an object file
+aes.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/arithmetic.dir/build.make CMakeFiles/arithmetic.dir/aes.cpp.o
+.PHONY : aes.cpp.o
+
+aes.i: aes.cpp.i
+.PHONY : aes.i
+
+# target to preprocess a source file
+aes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/arithmetic.dir/build.make CMakeFiles/arithmetic.dir/aes.cpp.i
+.PHONY : aes.cpp.i
+
+aes.s: aes.cpp.s
+.PHONY : aes.s
+
+# target to generate assembly for a file
+aes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/arithmetic.dir/build.make CMakeFiles/arithmetic.dir/aes.cpp.s
+.PHONY : aes.cpp.s
+
 base64.o: base64.cpp.o
 .PHONY : base64.o
 
@@ -249,6 +273,30 @@ md5.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/arithmetic.dir/build.make CMakeFiles/arithmetic.dir/md5.cpp.s
 .PHONY : md5.cpp.s
 
+padding.o: padding.cpp.o
+.PHONY : padding.o
+
+# target to build an object file
+padding.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/arithmetic.dir/build.make CMakeFiles/arithmetic.dir/padding.cpp.o
+.PHONY : padding.cpp.o
+
+padding.i: padding.cpp.i
+.PHONY : padding.i
+
+# target to preprocess a source file
+padding.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/arithmetic.dir/build.make CMakeFiles/arithmetic.dir/padding.cpp.i
+.PHONY : padding.cpp.i
+
+padding.s: padding.cpp.s
+.PHONY : padding.s
+
+# target to generate assembly for a file
+padding.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/arithmetic.dir/build.make CMakeFiles/arithmetic.dir/padding.cpp.s
+.PHONY : padding.cpp.s
+
 sha1.o: sha1.cpp.o
 .PHONY : sha1.o
 
@@ -282,6 +330,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... arithmetic"
+	@echo "... aes.o"
+	@echo "... aes.i"
+	@echo "... aes.s"
 	@echo "... base64.o"
 	@echo "... base64.i"
 	@echo "... base64.s"
@@ -297,6 +348,9 @@ help:
 	@echo "... md5.o"
 	@echo "... md5.i"
 	@echo "... md5.s"
+	@echo "... padding.o"
+	@echo "... padding.i"
+	@echo "... padding.s"
 	@echo "... sha1.o"
 	@echo "... sha1.i"
 	@echo "... sha1.s"

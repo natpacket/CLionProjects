@@ -4,6 +4,7 @@
 #include "sha1.h"
 #include "hmac_md5.h"
 #include "crc32.h"
+#include "aes.h"
 
 int main() {
     testBase64();
@@ -11,6 +12,7 @@ int main() {
     testsha1();
     testcrc32();
     test_hmac_md5();
+    testAes();
     std::cout << "Hello, World!" << std::endl;
     return 0;
 }
