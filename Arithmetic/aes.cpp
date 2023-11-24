@@ -103,7 +103,32 @@ unsigned char *AES::Cipher(unsigned char *input) {
     for (i = 1; i <= 10; i++) {
         SubBytes(state);
         ShiftRows(state);
+        if(i==9){
+//            state[0][0] = 0x11;
+//            state[0][1] = 0x11;
+//            state[0][2] = 0x11;
+//            state[0][3] = 0x11;
+            //
+//            state[1][0] = 0x11;
+//            state[1][1] = 0x11;
+//            state[1][2] = 0x11;
+//            state[1][3] = 0x11;
+            //
+//            state[2][0] = 0x11;
+//            state[2][1] = 0x11;
+//            state[2][2] = 0x11;
+//            state[2][3] = 0x11;
+            //
+//            state[3][0] = 0x11;
+//            state[3][1] = 0x11;
+//            state[3][2] = 0x11;
+//            state[3][3] = 0x11;
+        }
         if (i != 10)MixColumns(state);
+//        if(i==10){
+//            printf("第十轮密钥:\n");
+//            std::cout << Hexdump(w[i], 16) << std::endl;
+//        }
         AddRoundKey(state, w[i]);
     }
 
@@ -304,17 +329,17 @@ void testAes() {
 
     unsigned char input_decrypt[] =
             {
-                    0xa2,0x54,0xbe,0x88,
-                    0xe0,0x37,0xdd,0xd9,
-                    0xd7,0x9f,0xb6,0x41,
-                    0x1c,0x3f,0x9d,0xf8
+                    0x39,0x25,0x84,0x1d,
+                    0x02,0xdc,0x09,0xfb,
+                    0xdc,0x11,0x85,0x97,
+                    0x19,0x6a,0x0b,0x32
             };
     std::vector<unsigned char> input =
             {
                     0x32, 0x43, 0xf6, 0xa8,
                     0x88, 0x5a, 0x30, 0x8d,
                     0x31, 0x31, 0x98, 0xa2,
-                    0xe0, 0x37, 0x07, 0x34,0x12
+                    0xe0, 0x37, 0x07, 0x34
             };
     unsigned char key[] =
             {
@@ -323,7 +348,7 @@ void testAes() {
                     0xab, 0xf7, 0x15, 0x88,
                     0x09, 0xcf, 0x4f, 0x3c
             };
-    input = PKCS7Padding(input);
+//    input = PKCS7Padding(input);
     printf("aes encrypt for '%s', key: %s.\n", input.data(), key);
     AES aes(key);
 
